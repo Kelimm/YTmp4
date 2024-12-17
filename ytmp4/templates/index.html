@@ -1,0 +1,23 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{% static 'style.css' %}" />
+    <title>YTMP4</title>
+  </head>
+  <body>
+    <form method="POST">
+      {% csrf_token %}
+      <p>YTMP4 (Marche que avec Youtube)</p>
+      <input type="text" placeholder="Enter Youtube URL" name="url" id="url" />
+      <button type="submit">Telecharger</button>
+      <div class="lds-ring" id="loading" style="display: none;">
+        <div></div><div></div><div></div><div></div>
+      </div>
+      <p id="message" style="display: none;">Téléchargement terminé !</p>
+    </form>
+    <script src="{% static 'script.js' %}"></script>
+  </body>
+</html>
